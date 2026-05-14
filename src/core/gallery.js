@@ -23,6 +23,7 @@ export function createGallery(scene) {
   let driftTarget = 0;
   let driftCurrent = 0;
   let breathIntensity = 0;
+  let loadedCount = 0;
 
   window.addEventListener('pointermove', (e) => {
     pointerTarget.set(
@@ -55,6 +56,9 @@ export function createGallery(scene) {
       plane.position.set(item.x, 0, -index * planeGap);
       scene.add(plane);
       planes[index] = plane;
+
+      loadedCount++;
+      if (loadedCount === items.length) onReady?.();
     });
   });
 
