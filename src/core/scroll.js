@@ -71,5 +71,5 @@ export function createScroll(camera, gallery) {
     camera.position.z = THREE.MathUtils.clamp(nextCameraZ, minCameraZ, maxCameraZ);
   }
 
-  return { update, getVelocity: () => velocity, velocityMax };
+  return { update, getVelocity: () => velocity, init };
 }

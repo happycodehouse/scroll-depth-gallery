@@ -24,6 +24,7 @@ export function createGallery(scene, onReady) {
   let driftCurrent = 0;
   let breathIntensity = 0;
   let loadedCount = 0;
+  let onReadyCallback = null;
 
   window.addEventListener('pointermove', (e) => {
     pointerTarget.set(
@@ -58,7 +59,7 @@ export function createGallery(scene, onReady) {
       planes[index] = plane;
 
       loadedCount++;
-      if (loadedCount === items.length) onReady?.();
+      if (loadedCount === items.length) onReadyCallback?.();
     });
   });
 
@@ -142,5 +143,5 @@ export function createGallery(scene, onReady) {
     });
   }
 
-  return { update, getDepthRange };
+  return { update, getDepthRange, setOnReady: (fn) => { onReadyCallback = fn; } };
 }
