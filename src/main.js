@@ -10,6 +10,9 @@ const background = createBackground(renderer);
 
 gallery.setOnReady(() => {
   scroll.init();
+  setTimeout(() => {
+    document.body.classList.remove('loading');
+  }, 500);
 });
 
 function loop() {

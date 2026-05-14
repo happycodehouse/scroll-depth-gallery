@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { items } from '../data/items.js';
 
-export function createGallery(scene, onReady) {
+export function createGallery(scene) {
   const planeGap = 5;
   const planeFadeSmoothing = 0.14;
   const planeFadeSampleOffset = 1;
@@ -143,5 +143,10 @@ export function createGallery(scene, onReady) {
     });
   }
 
-  return { update, getDepthRange, setOnReady: (fn) => { onReadyCallback = fn; } };
+  function setOnReady(fn) {
+    onReadyCallback = fn;
+    if (loadedCount === items.length) fn();
+  }
+
+  return { update, getDepthRange, setOnReady };
 }
