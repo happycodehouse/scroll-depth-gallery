@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { items } from '../data/items.js';
 
-export function createGallery(scene) {
+export function createGallery(scene, onReady) {
   const planeGap = 5;
   const planeFadeSmoothing = 0.14;
   const planeFadeSampleOffset = 1;
