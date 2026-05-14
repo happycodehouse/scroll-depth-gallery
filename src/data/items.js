@@ -1,62 +1,14 @@
 export const items = [
-  {
-    x: -0.8,
-    src: '/images/tea-01.jpg',
-    mood: { bg: '#c8d8e8', blob1: '#a0b8d0', blob2: '#6090b0' },
-  },
-  {
-    x: 0.8,
-    src: '/images/tea-02.jpg',
-    mood: { bg: '#f5e6d0', blob1: '#e8c8a0', blob2: '#c89060' },
-  },
-  {
-    x: -0.5,
-    src: '/images/tea-03.jpg',
-    mood: { bg: '#e8e8e8', blob1: '#c0c0c0', blob2: '#909090' },
-  },
-  {
-    x: 0.6,
-    src: '/images/tea-04.jpg',
-    mood: { bg: '#8b1a1a', blob1: '#c04040', blob2: '#401010' },
-  },
-  {
-    x: -0.7,
-    src: '/images/tea-05.jpg',
-    mood: { bg: '#d8e8c8', blob1: '#b0c890', blob2: '#80a060' },
-  },
-  {
-    x: 0.4,
-    src: '/images/tea-06.jpg',
-    mood: { bg: '#e8f0d8', blob1: '#c0d8a0', blob2: '#90b070' },
-  },
-  {
-    x: -0.6,
-    src: '/images/tea-07.jpg',
-    mood: { bg: '#f0ece8', blob1: '#d8c8c0', blob2: '#b0a098' },
-  },
-  {
-    x: 0.5,
-    src: '/images/tea-08.jpg',
-    mood: { bg: '#f5e8f0', blob1: '#e0c0d8', blob2: '#c090b8' },
-  },
-  {
-    x: -0.4,
-    src: '/images/tea-09.jpg',
-    mood: { bg: '#f0f0f8', blob1: '#d0d0e8', blob2: '#a0a0c8' },
-  },
-  {
-    x: 0.7,
-    src: '/images/tea-10.jpg',
-    mood: { bg: '#e8d8c8', blob1: '#c8a888', blob2: '#a07848' },
-  },
-  {
-    x: -0.6,
-    src: '/images/tea-11.jpg',
-    mood: { bg: '#e8e8f5', blob1: '#c0c0e0', blob2: '#9090c0' },
-  },
-  {
-    x: 0.5,
-    src: '/images/tea-12.jpg',
-    mood: { bg: '#f5e8d8', blob1: '#e0c0a0', blob2: '#c09060' },
-  },
+  { x: -0.9, src: '/images/tea-01.jpg', mood: { bg: '#f5a050', blob1: '#ff6600', blob2: '#ffcc00' } },
+  { x:  0.8, src: '/images/tea-02.jpg', mood: { bg: '#2a8a7a', blob1: '#00ffdd', blob2: '#00ccaa' } },
+  { x: -0.7, src: '/images/tea-03.jpg', mood: { bg: '#c82878', blob1: '#ff80c0', blob2: '#ff00aa' } },
+  { x:  1.0, src: '/images/tea-04.jpg', mood: { bg: '#1a7a7a', blob1: '#00ffff', blob2: '#80ffee' } },
+  { x: -0.7, src: '/images/tea-05.jpg', mood: { bg: '#3040a0', blob1: '#8090ff', blob2: '#aabbff' } },
+  { x:  0.8, src: '/images/tea-06.jpg', mood: { bg: '#7030c0', blob1: '#cc80ff', blob2: '#ff80ee' } },
+  { x: -0.9, src: '/images/tea-07.jpg', mood: { bg: '#3a5070', blob1: '#80aadd', blob2: '#aaccff' } },
+  { x:  1.0, src: '/images/tea-08.jpg', mood: { bg: '#208870', blob1: '#80ffcc', blob2: '#aaffdd' } },
+  { x: -0.7, src: '/images/tea-09.jpg', mood: { bg: '#808030', blob1: '#dddd00', blob2: '#ffff80' } },
+  { x:  0.8, src: '/images/tea-10.jpg', mood: { bg: '#305880', blob1: '#80aaff', blob2: '#aaccff' } },
+  { x: -0.9, src: '/images/tea-11.jpg', mood: { bg: '#a08020', blob1: '#ffdd00', blob2: '#ffee80' } },
+  { x:  1.0, src: '/images/tea-12.jpg', mood: { bg: '#608020', blob1: '#aadd00', blob2: '#ccff40' } },
 ];

@@ -2,7 +2,9 @@ import * as THREE from 'three';
 import { items } from '../data/items.js';
 
 export function createGallery(scene) {
-  const planeGap = 3;
+  const planeGap = 5;
+  const planeFadeSmoothing = 0.14;
+  const planeFadeSampleOffset = 1;
   const loader = new THREE.TextureLoader();
   const planes = [];
 
@@ -36,52 +38,73 @@ export function createGallery(scene) {
   items.forEach((item, index) => {
     loader.load(item.src, (texture) => {
       const aspect = texture.image.width / texture.image.height;
-      const geo = new THREE.PlaneGeometry(2 * aspect, 2);
+      const geo = new THREE.PlaneGeometry(3, 3);
       const mat = new THREE.MeshBasicMaterial({
         map: texture,
         transparent: true,
-        opacity: index === 0 ? 1 : 0,
         depthWrite: false,
+        opacity: index === 0 ? 1 : 0,
       });
       const plane = new THREE.Mesh(geo, mat);
 
       plane.userData.baseX = item.x;
       plane.userData.baseY = 0;
-      plane.userData.index = index;
-      plane.userData.aspect = aspect;
+      plane.userData.aspectRatio = aspect;
 
+      plane.scale.set(aspect, 1, 1);
       plane.position.set(item.x, 0, -index * planeGap);
       scene.add(plane);
-      planes.push(plane);
+      planes[index] = plane;
     });
   });
 
-  function updateVisibility(cameraZ) {
-    const planeGap3 = planeGap;
-    const firstZ = 0;
-    const lastIndex = items.length - 1;
-    const normalizedDepth = THREE.MathUtils.clamp(
-      (firstZ - (cameraZ - planeGap3)) / planeGap3,
-      0,
-      lastIndex
-    );
-    const currentIndex = Math.floor(normalizedDepth);
-    const nextIndex = Math.min(currentIndex + 1, lastIndex);
-    const blend = normalizedDepth - currentIndex;
+  function getDepthRange() {
+    const validPlanes = planes.filter(Boolean);
+    if (!validPlanes.length) return { nearestZ: 0, deepestZ: 0 };
+    const zPositions = validPlanes.map(p => p.position.z);
+    return {
+      nearestZ: Math.max(...zPositions),
+      deepestZ: Math.min(...zPositions),
+    };
+  }
 
-    planes.forEach((plane, i) => {
+  function getPlaneBlendData(cameraZ) {
+    if (!planes.length) return null;
+    const firstPlaneZ = planes[0]?.position.z ?? 0;
+    const lastPlaneIndex = planes.length - 1;
+    const sampledCameraZ = cameraZ - planeGap * planeFadeSampleOffset;
+    const normalizedDepth = THREE.MathUtils.clamp(
+      (firstPlaneZ - sampledCameraZ) / planeGap,
+      0,
+      lastPlaneIndex
+    );
+    const currentPlaneIndex = Math.floor(normalizedDepth);
+    const nextPlaneIndex = Math.min(currentPlaneIndex + 1, lastPlaneIndex);
+    const blend = normalizedDepth - currentPlaneIndex;
+    return { currentPlaneIndex, nextPlaneIndex, blend };
+  }
+
+  function updatePlaneVisibility(cameraZ) {
+    const blendData = getPlaneBlendData(cameraZ);
+    if (!blendData) return;
+    const { currentPlaneIndex, nextPlaneIndex, blend } = blendData;
+
+    planes.forEach((plane, index) => {
+      if (!plane) return;
       let target = 0;
-      if (i === currentIndex) target = 1 - blend;
-      if (i === nextIndex) target = Math.max(target, blend);
-      plane.material.opacity = THREE.MathUtils.lerp(plane.material.opacity, target, 0.14);
+      if (index === currentPlaneIndex) target = 1 - blend;
+      if (index === nextPlaneIndex) target = Math.max(target, blend);
+      const current = Number.isFinite(plane.material.opacity) ? plane.material.opacity : 0;
+      plane.material.opacity = THREE.MathUtils.lerp(current, target, planeFadeSmoothing);
     });
   }
 
-  function update(scroll) {
-    const velocity = scroll?.getVelocity() || 0;
-    const velocityMax = 0.02;
+  function update(scroll, cameraZ) {
+    updatePlaneVisibility(cameraZ);
 
-    // 포인터 스무딩
+    const velocity = scroll?.getVelocity() || 0;
+    const velocityMax = scroll?.velocityMax || 1.5;
+
     pointerCurrent.lerp(pointerTarget, parallaxSmoothing);
 
     const velocityNormalized = THREE.MathUtils.clamp(Math.abs(velocity) / velocityMax, 0, 1);
@@ -93,7 +116,8 @@ export function createGallery(scene) {
     driftCurrent = THREE.MathUtils.lerp(driftCurrent, driftTarget, gestureSmoothing);
 
     planes.forEach((plane, index) => {
-      const opacity = plane.material.opacity;
+      if (!plane) return;
+      const opacity = Number.isFinite(plane.material.opacity) ? plane.material.opacity : 0;
       const depthInfluence = 1 + index * 0.05;
       const parallaxInfluence = opacity * depthInfluence;
 
@@ -108,15 +132,11 @@ export function createGallery(scene) {
       plane.rotation.x = -pointerCurrent.y * breathTiltAmount * breathInfluence;
       plane.rotation.y = pointerCurrent.x * breathTiltAmount * breathInfluence;
 
-      const aspect = plane.userData.aspect || 1;
+      const aspect = plane.userData.aspectRatio || 1;
       const scalePulse = 1 + breathScaleAmount * breathInfluence;
       plane.scale.set(aspect * scalePulse, scalePulse, 1);
     });
   }
 
-  function updateCamera(cameraZ) {
-    updateVisibility(cameraZ);
-  }
-
-  return { update, updateCamera };
+  return { update, getDepthRange };
 }
