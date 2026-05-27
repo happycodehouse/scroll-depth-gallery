@@ -123,3 +123,50 @@ header {
         transform-origin: 100% 50%;
     }
 }
+
+.plane-label-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    transition: opacity 0.4s ease;
+}
+
+.plane-label-overlay__left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.plane-label-overlay__chip {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-top: 4px;
+}
+
+.plane-label-card__specs {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: right;
+}
+
+.plane-label-card__row {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.plane-label-card__row dt {
+    opacity: 0.5;
+}

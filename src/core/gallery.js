@@ -39,6 +39,8 @@ export function createGallery(scene) {
 
   items.forEach((item, index) => {
     loader.load(item.src, (texture) => {
+      texture.colorSpace = THREE.SRGBColorSpace;
+
       const aspect = texture.image.width / texture.image.height;
       const geo = new THREE.PlaneGeometry(3, 3);
       const mat = new THREE.MeshBasicMaterial({
@@ -148,5 +150,5 @@ export function createGallery(scene) {
     if (loadedCount === items.length) fn();
   }
 
-  return { update, getDepthRange, setOnReady };
+  return { update, getDepthRange, setOnReady, getPlaneBlendData };
 }
