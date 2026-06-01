@@ -124,7 +124,7 @@ header {
     }
 }
 
-.plane-label-overlay {
+.tea-label {
     position: fixed;
     top: 0;
     left: 0;
@@ -138,35 +138,33 @@ header {
     font-size: 11px;
     letter-spacing: 0.05em;
     transition: opacity 0.4s ease;
+    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-.plane-label-overlay__left {
+.tea-label__left {
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
-.plane-label-overlay__chip {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    margin-top: 4px;
-}
-
-.plane-label-card__specs {
+.tea-label__right {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
     text-align: right;
+    max-width: 320px;
 }
 
-.plane-label-card__row {
-    display: flex;
-    gap: 1rem;
-    justify-content: flex-end;
-}
-
-.plane-label-card__row dt {
+.tea-label__index {
     opacity: 0.5;
+}
+
+.tea-label__price {
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+.tea-label__desc {
+    opacity: 0.7;
+    line-height: 1.6;
 }
