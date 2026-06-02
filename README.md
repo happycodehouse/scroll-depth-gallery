@@ -4,9 +4,16 @@
 
 <img src="./public/images/preview.png" alt="Preview Image" width="600">
 
-[🔗 Live Demo](https://your-demo-link.netlify.app/)
+[🔗 Live Demo](https://scroll-depth-gallery.netlify.app/)
 
 ---
+
+## Features
+- Depth-layered image planes stacked along the Z-axis
+- Mood-based background that shifts per image
+- Velocity-reactive breath, tilt, and drift on scroll
+- Pointer parallax with depth influence per plane
+- Product label overlay with brand info and description
 
 ## Tech Stack
 - **Three.js** — 3D rendering
