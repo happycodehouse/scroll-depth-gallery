@@ -1,4 +1,4 @@
-import { items, BRAND, PRICE, VOLUME } from '../data/items.js';
+import { items, BRAND, PRICE, VOLUME } from '../../data/items.js';
 
 export function createLabel(getPlaneBlendData) {
   let overlayElement = null;

@@ -5,7 +5,7 @@ const VOLUME = 'TEA BAG (15EA)';
 export const items = [
   {
     x: 0.3,
-    src: '/images/tea-05.jpg',
+    src: '/assets/images/tea-05.jpg',
     label: {
       name: 'TEA BAG EDITION - MANTIS',
       desc: 'A mint tea softly and steadily infusing like a mantis easing across damp grass. Fresh bite of peppermint and smooth essence of spearmint gradually unveil a gentle, airy sweetness. Caffeine-Free',
@@ -15,7 +15,7 @@ export const items = [
   },
   {
     x: -0.9,
-    src: '/images/tea-02.jpg',
+    src: '/assets/images/tea-02.jpg',
     label: {
       name: 'TEA BAG EDITION - THE MAFIA',
       desc: 'A black tea inspired by an image of a mafia man biting into caramel and exhaling a curl of smoke. Sharp edge of cinnamon cuts through the sweetness of caramel, weaving a compelling contrast between rugged intensity and smooth softness.',
@@ -25,7 +25,7 @@ export const items = [
   },
   {
     x: 0.8,
-    src: '/images/tea-03.jpg',
+    src: '/assets/images/tea-03.jpg',
     label: {
       name: 'TEA BAG EDITION - BLACK CARAMEL',
       desc: 'A black tea with the scorched sweetness and toasty nuttiness of burnt caramel. Gentle aftertaste, where the mellow richness of caramel meets bright, bitter edges of bergamot.',
@@ -35,7 +35,7 @@ export const items = [
   },
   {
     x: -0.4,
-    src: '/images/tea-04.jpg',
+    src: '/assets/images/tea-04.jpg',
     label: {
       name: 'TEA BAG EDITION - PEACH ROSIE',
       desc: 'A white tea reminiscent of the quiet moment a girl with peach-tinted cheeks breathes in the scent of a rose. Clean, gentle finish where the soft sweetness of peach mingles with delicate hints of apricot and rose.',
@@ -45,7 +45,7 @@ export const items = [
   },
   {
     x: 0.9,
-    src: '/images/tea-01.jpg',
+    src: '/assets/images/tea-01.jpg',
     label: {
       name: 'TEA BAG EDITION - LEATHER BOOTS',
       desc: 'A black tea layered with comforting scents of roasted peanuts and almonds, followed by quiet hints of whiskey. Aftertaste of warmth and depth, like the soft embrace of aged leather.',

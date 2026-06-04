@@ -1,21 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='ko'>
 <head>
-    <meta charset="UTF-8">
-    <title>scroll-depth-gallery</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
-    <link rel='stylesheet' href='/src/css/style.min.css'>
-</head>
-<body class="loading">
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon/favicon-16x16.png">
+  <link rel='stylesheet' href='./assets/css/style.min.css'>
+  <title>scroll-depth-gallery</title></head>
+<body class='loading'>
 <div id="wrap" class="wrap">
-    <header>
-        <h1>Scroll Depth Gallery</h1>
-        <a href="https://github.com/happycodehouse/scroll-depth-gallery" rel="noopener noreferrer" target="_blank">GitHub</a>
-        <p>Content sourced from <a href="https://www.nudake.com/" rel="noopener noreferrer" target="_blank">nudake.com</a></p>
-    </header>
+  <header>
+    <h1>Scroll Depth Gallery</h1>
+    <a href="https://github.com/happycodehouse/scroll-depth-gallery" rel="noopener noreferrer" target="_blank">GitHub</a>
+    <p>Content sourced from <a href="https://www.nudake.com/" rel="noopener noreferrer" target="_blank">nudake.com</a></p>
+  </header>
 </div>
-<script type="module" src="/src/main.js"></script>
+<script type='importmap'>
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.176.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.176.0/examples/jsm/"
+      }
+    }
+</script>
+<script type='module' src='./js/main.js'></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 > A scroll-driven WebGL gallery — depth-layered images, mood-based backgrounds, and velocity-reactive motion.
 
-<img src="./public/images/preview.png" alt="Preview Image" width="600">
+<img src="./assets/images/preview.png" alt="Preview Image" width="600">
 
 [🔗 Live Demo](https://scroll-depth-gallery.netlify.app/)
 
@@ -16,9 +16,9 @@
 - Product label overlay with brand info and description
 
 ## Tech Stack
-- **Three.js** — 3D rendering
+- **Three.js** — 3D rendering (via CDN importmap)
 - **GLSL** — Shader backgrounds
-- **Vite** · **JavaScript (ES Modules)**
+- **JavaScript (ES Modules)**
 
 ## Reference
 Inspired by [Atmospheric Depth Gallery](https://tympanus.net/codrops/2026/03/09/building-a-scroll-reactive-3d-gallery-with-three-js-velocity-and-mood-based-backgrounds/) by Houmahani Kane on Codrops

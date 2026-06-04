@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { items } from './../../data/items.js';
+import { items } from '../../data/items.js';
 
 export function createBackground(renderer) {
   const scene = new THREE.Scene();
@@ -12,7 +12,8 @@ export function createBackground(renderer) {
   const nextBlob1Color = new THREE.Color();
   const nextBlob2Color = new THREE.Color();
 
-  const vertexShader = `
+  // ※ 로컬 환경에서는 .glsl import가 안 되므로 문자열로 인라인 처리
+  const vertexShader = /* glsl */`
     varying vec2 vUv;
     void main() {
       vUv = uv;
@@ -20,7 +21,7 @@ export function createBackground(renderer) {
     }
   `;
 
-  const fragmentShader = `
+  const fragmentShader = /* glsl */`
     varying vec2 vUv;
     uniform vec3 uBackgroundColor;
     uniform vec3 uBlob1Color;

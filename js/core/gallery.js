@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { items } from '../data/items.js';
+import { items } from '../../data/items.js';
 
 export function createGallery(scene) {
   const planeGap = 5;

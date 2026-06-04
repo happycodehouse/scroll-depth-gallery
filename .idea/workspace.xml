@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="971d0dbd-6244-4cda-bfa2-95b1d04aa296" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/data/items.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/core/background.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/core/gallery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/core/label.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/core/renderer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/core/scroll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/apple-touch-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/favicon-16x16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/favicon-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/preview.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/tea-01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/tea-02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/tea-03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/tea-04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/tea-05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/background/background.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/background/fragment.glsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/background/vertex.glsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/gallery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/label.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/renderer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/scroll.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/style.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/style.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/items.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="3Deo4MXGx91x3oDGtYxLcsdqYz1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/data" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="D:\local\ROOT\prototypes\scroll-depth-gallery\node_modules\prettier" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\local\ROOT\prototypes\scroll-depth-gallery\data" />
+      <recent name="D:\local\ROOT\prototypes\scroll-depth-gallery" />
+      <recent name="D:\local\ROOT\prototypes\scroll-depth-gallery\public\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\local\ROOT\prototypes\scroll-depth-gallery\js\core" />
+      <recent name="D:\local\ROOT\prototypes\scroll-depth-gallery\src\core\background" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="971d0dbd-6244-4cda-bfa2-95b1d04aa296" name="Changes" comment="" />
+      <created>1778651704140</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1778651704140</updated>
+      <workItem from="1778651705441" duration="17717000" />
+      <workItem from="1778726352492" duration="4803000" />
+      <workItem from="1778735759671" duration="9483000" />
+      <workItem from="1778745350436" duration="6042000" />
+      <workItem from="1779777711997" duration="7407000" />
+      <workItem from="1779857990737" duration="20544000" />
+      <workItem from="1780288625751" duration="3297000" />
+      <workItem from="1780532782744" duration="2121000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
