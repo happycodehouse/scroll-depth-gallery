@@ -51,12 +51,19 @@ export function createGallery(scene) {
       });
       const plane = new THREE.Mesh(geo, mat);
 
+      const isMobile = window.innerWidth <= 1024;
+      const xScale = isMobile ? 0.4 : 1;
+      const sizeScale = isMobile ? 0.6 : 1;
+
       plane.userData.baseX = item.x;
       plane.userData.baseY = 0;
       plane.userData.aspectRatio = aspect;
+      plane.userData.xScale = xScale;
+      plane.userData.sizeScale = sizeScale;
 
-      plane.scale.set(aspect, 1, 1);
-      plane.position.set(item.x, 0, -index * planeGap);
+      plane.scale.set(aspect * sizeScale, sizeScale, 1);
+      plane.position.set(item.x * xScale, 0, -index * planeGap);
+
       scene.add(plane);
       planes[index] = plane;
 
@@ -122,17 +129,20 @@ export function createGallery(scene) {
     driftTarget = scrollDrift;
     driftCurrent = THREE.MathUtils.lerp(driftCurrent, driftTarget, gestureSmoothing);
 
-    planes.forEach((plane, index) => {
+    planes.forEach((plane) => {
       if (!plane) return;
       const opacity = Number.isFinite(plane.material.opacity) ? plane.material.opacity : 0;
-      const depthInfluence = 1 + index * 0.05;
+      const depthInfluence = 1 + planes.indexOf(plane) * 0.05;
       const parallaxInfluence = opacity * depthInfluence;
+
+      const xScale = plane.userData.xScale ?? 1;
+      const sizeScale = plane.userData.sizeScale ?? 1;
 
       const offsetX = pointerCurrent.x * parallaxAmountX * parallaxInfluence;
       const offsetY = pointerCurrent.y * parallaxAmountY * parallaxInfluence;
       const gestureY = driftCurrent * gestureAmountY;
 
-      plane.position.x = plane.userData.baseX + offsetX;
+      plane.position.x = plane.userData.baseX * xScale + offsetX;
       plane.position.y = plane.userData.baseY + offsetY + gestureY;
 
       const breathInfluence = breathIntensity * opacity;
@@ -141,7 +151,7 @@ export function createGallery(scene) {
 
       const aspect = plane.userData.aspectRatio || 1;
       const scalePulse = 1 + breathScaleAmount * breathInfluence;
-      plane.scale.set(aspect * scalePulse, scalePulse, 1);
+      plane.scale.set(aspect * scalePulse * sizeScale, scalePulse * sizeScale, 1);
     });
   }
 
@@ -150,5 +160,18 @@ export function createGallery(scene) {
     if (loadedCount === items.length) fn();
   }
 
-  return { update, getDepthRange, setOnReady, getPlaneBlendData };
+  function onResize(xScale) {
+    planes.forEach((plane) => {
+      if (!plane) return;
+      const aspect = plane.userData.aspectRatio || 1;
+      const sizeScale = window.innerWidth <= 1024 ? 0.6 : 1;
+
+      plane.userData.xScale = xScale;
+      plane.userData.sizeScale = sizeScale;
+      plane.position.x = plane.userData.baseX * xScale;
+      plane.scale.set(aspect * sizeScale, sizeScale, 1);
+    });
+  }
+
+  return { update, getDepthRange, setOnReady, getPlaneBlendData, onResize };
 }

@@ -10,6 +10,12 @@ const gallery = createGallery(scene);
 const scroll = createScroll(camera, gallery);
 const label = createLabel(gallery.getPlaneBlendData);
 
+window.addEventListener('resize', () => {
+  const isMobile = window.innerWidth <= 1024;
+  const xScale = isMobile ? 0.4 : 1;
+  gallery.onResize(xScale);
+});
+
 gallery.setOnReady(() => {
   scroll.init();
   setTimeout(() => {
